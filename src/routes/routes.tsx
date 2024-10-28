@@ -1,44 +1,36 @@
-import { PRIVATE_PATHS, PUBLIC_PATHS } from '../utils/enum';
-import { AppRoute } from '../types/route';
+import { PATHS } from '../utils/enum';
 import { Navigate } from 'react-router-dom';
-import { Signin, Signup } from '../pages/auth';
-import LandingPage from '../pages/landingPage';
-import Dashboard from '../pages/app/Dashboard';
+import Pagination from '../pages/Pagination';
+import CustomSelect from '../pages/CustomSelect';
 
-const { SIGNIN, SIGNUP, ROOT, LANDING_PAGE } = PUBLIC_PATHS;
+interface AppRoute {
+  path: string;
+  element: React.ReactNode;
+  children?: [
+    {
+      path: string;
+      element: React.ReactNode;
+    }
+  ];
+}
 
-const { DASHBOARD } = PRIVATE_PATHS;
+const { ROOT, PAGINATION, CUSTOMSELECT } = PATHS;
 
-export const PUBLIC_ROUTES: AppRoute[] = [
+export const ROUTES: AppRoute[] = [
   {
     path: ROOT,
-    element: <Signin />,
+    element: <Pagination />,
   },
   {
-    path: SIGNIN,
-    element: <Signin />,
+    path: PAGINATION,
+    element: <Pagination />,
   },
   {
-    path: SIGNUP,
-    element: <Signup />,
-  },
-  {
-    path: LANDING_PAGE,
-    element: <LandingPage />,
+    path: CUSTOMSELECT,
+    element: <CustomSelect />,
   },
   {
     path: '*',
-    element: <Navigate to={SIGNIN} replace />,
-  },
-];
-
-export const PRIVATE_ROUTES: AppRoute[] = [
-  {
-    path: DASHBOARD,
-    element: <Dashboard />,
-  },
-  {
-    path: '*',
-    element: <Navigate to={DASHBOARD} replace />,
+    element: <Navigate to={PAGINATION} replace />,
   },
 ];

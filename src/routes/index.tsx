@@ -1,25 +1,20 @@
-import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "./routes";
-import { useRoutes, useLocation } from "react-router-dom";
+import Layout from '../layout';
+import { ROUTES } from './routes';
+import { useRoutes, useLocation } from 'react-router-dom';
 
-const PublicRouteWrapper = () => {
-  const routes = useRoutes(PUBLIC_ROUTES);
-  return routes;
-};
-const PrivateRouteWrapper = () => {
-  const routes = useRoutes(PRIVATE_ROUTES);
+const RouteWrapper = () => {
+  const routes = useRoutes(ROUTES);
   return routes;
 };
 
 const Pages = () => {
   const location = useLocation();
-  const user = localStorage.getItem("user");
-  return user ? (
-    <PrivateRouteWrapper key={location.pathname} />
-  ) : (
-    <PublicRouteWrapper key={location.pathname} />
+  return (
+    <Layout>
+      <RouteWrapper key={location.pathname} />
+    </Layout>
   );
 };
 
 export default Pages;
 
-//when im setting local storage for user, set user to data?.token

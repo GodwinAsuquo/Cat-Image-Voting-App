@@ -1,11 +1,7 @@
 
-export enum PUBLIC_PATHS {
+export enum PATHS {
   ROOT = "/",
-  LANDING_PAGE = "/home",
-  SIGNIN = "/signin",
-  SIGNUP = "/signup",
+ PAGINATION = '/pagination',
+ CUSTOMSELECT = 'custom-select'
 }
 
-export enum PRIVATE_PATHS {
-  DASHBOARD = "/dashboard",
-}
