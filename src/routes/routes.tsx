@@ -2,6 +2,7 @@ import { PATHS } from '../utils/enum';
 import { Navigate } from 'react-router-dom';
 import Pagination from '../pages/Pagination';
 import CustomSelect from '../pages/CustomSelect';
+import Accordion from '../pages/Accordion';
 
 interface AppRoute {
   path: string;
@@ -14,7 +15,7 @@ interface AppRoute {
   ];
 }
 
-const { ROOT, PAGINATION, CUSTOMSELECT } = PATHS;
+const { ROOT, PAGINATION, CUSTOMSELECT, ACCORDION } = PATHS;
 
 export const ROUTES: AppRoute[] = [
   {
@@ -28,6 +29,10 @@ export const ROUTES: AppRoute[] = [
   {
     path: CUSTOMSELECT,
     element: <CustomSelect />,
+  },
+  {
+    path:ACCORDION ,
+    element: <Accordion />,
   },
   {
     path: '*',

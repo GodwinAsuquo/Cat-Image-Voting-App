@@ -2,6 +2,7 @@
 export enum PATHS {
   ROOT = "/",
  PAGINATION = '/pagination',
- CUSTOMSELECT = 'custom-select'
+ CUSTOMSELECT = 'custom-select',
+ ACCORDION = 'accordion'
 }
 
