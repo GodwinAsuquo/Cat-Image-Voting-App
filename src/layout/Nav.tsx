@@ -1,18 +1,12 @@
-import { useNavigate } from 'react-router-dom';
-import { navLinks } from '../utils/constants';
+// import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <nav>
-      <div className="ml-10 mt-5 space-x-10 cursor-pointer">
-        {navLinks.map((d, i) => {
-          return (
-            <button onClick={() => navigate(d.route)} key={i}>
-              {d.label}
-            </button>
-          );
-        })}
+      <div className="flex ml-10 mt-5 space-x-10 cursor-pointer">
+       <div>1</div>
+       <div>2</div>
       </div>
     </nav>
   );

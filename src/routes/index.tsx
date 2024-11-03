@@ -3,8 +3,8 @@ import { ROUTES } from './routes';
 import { useRoutes, useLocation } from 'react-router-dom';
 
 const RouteWrapper = () => {
-  const routes = useRoutes(ROUTES);
-  return routes;
+  return useRoutes(ROUTES);
+  
 };
 
 const Pages = () => {
