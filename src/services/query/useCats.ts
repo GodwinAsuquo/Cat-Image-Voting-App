@@ -9,6 +9,7 @@ export const useGetCatImages = (limit?: number) => {
     onError: () => {
       toast.error('Failed to load cat images');
     },
+    refetchOnMount: false,
   });
 };
 

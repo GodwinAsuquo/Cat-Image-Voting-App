@@ -1,5 +1,5 @@
 import { CatImage } from '@/types';
-import { ThumbsUp, ThumbsDown, Info } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Info, Loader2 } from 'lucide-react';
 import { useCatStore } from '@/stores/catStore';
 import { useCreateVote } from '@/services/query/useCats';
 import { useNavigate } from 'react-router-dom';
@@ -56,31 +56,35 @@ export const CatCard = ({ cat }: CatCardProps) => {
 
       <div className="p-4">
         <div className="flex items-center justify-between">
-          <div className="flex gap-2">
-            <button
-              onClick={() => handleVote(1)}
-              disabled={hasVoted || isLoading}
-              className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
-                userVote === 1
-                  ? 'bg-green-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 hover:bg-green-100 dark:hover:bg-green-900'
-              } ${hasVoted && userVote !== 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-            >
-              <ThumbsUp size={20} />
-            </button>
+          {isLoading ? (
+            <Loader2 className="w-6 h-6 mt-2 animate-spin text-primary" />
+          ) : (
+            <div className="flex gap-2">
+              <button
+                onClick={() => handleVote(1)}
+                disabled={hasVoted || isLoading}
+                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
+                  userVote === 1
+                    ? 'bg-green-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 hover:bg-green-100 dark:hover:bg-green-900'
+                } ${hasVoted && userVote !== 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <ThumbsUp size={20} />
+              </button>
 
-            <button
-              onClick={() => handleVote(-1)}
-              disabled={hasVoted || isLoading}
-              className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
-                userVote === -1
-                  ? 'bg-red-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-red-900'
-              } ${hasVoted && userVote !== -1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-            >
-              <ThumbsDown size={20} />
-            </button>
-          </div>
+              <button
+                onClick={() => handleVote(-1)}
+                disabled={hasVoted || isLoading}
+                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
+                  userVote === -1
+                    ? 'bg-red-500 text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-red-900'
+                } ${hasVoted && userVote !== -1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                <ThumbsDown size={20} />
+              </button>
+            </div>
+          )}
 
           {(hasVoted || score !== null) && (
             <div className="text-sm font-semibold">
