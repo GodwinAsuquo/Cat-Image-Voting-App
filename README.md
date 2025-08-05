@@ -101,4 +101,4 @@ A modern web application for browsing and voting on random cat images using TheC
 
 
 
-Created for a job interview by the Alongside team.
+**Created for a job interview by the Alongside team❤️.**
