@@ -10,14 +10,14 @@ const Nav = () => {
   const { isDarkMode, toggleDarkMode } = useCatStore();
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-white dark:bg-gray-800 py-2 shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate(PATHS.ROOT)}>
               {/* <Cat /> */}
               <FaCat className="w-8 h-8 text-primary" />
-              <span className="font-bold text-xl dark:text-white">VoteMyCats</span>
+              <span className="font-bold text-xl dark:text-white hidden md:block">VoteMyCats</span>
             </div>
 
             <div className="flex space-x-6">

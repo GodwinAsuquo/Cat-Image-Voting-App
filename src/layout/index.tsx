@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       <Nav />
-      <div className="pt-20 pb-8 px-4 container mx-auto">{children}</div>
+      <div className="pt-28 pb-8 px-4 container mx-auto">{children}</div>
     </div>
   );
 };
