@@ -2,7 +2,6 @@
 
 A modern web application for browsing and voting on random cat images using TheCatAPI. Built with Vite, TypeScript, and Tailwind CSS.
 
-![Cat Voting App Demo](https://cat-image-voting-app.vercel.app/)
 
 ## Features
 
