@@ -4,7 +4,6 @@ import { useRoutes, useLocation } from 'react-router-dom';
 
 const RouteWrapper = () => {
   return useRoutes(ROUTES);
-  
 };
 
 const Pages = () => {
@@ -17,4 +16,3 @@ const Pages = () => {
 };
 
 export default Pages;
-

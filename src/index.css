@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+ --primary: 217 85% 56%;
+    --primary-dark: 217 85% 46%;
+  }
+  
+  html {
+    font-family: 'Urbanist', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: hsl(var(--primary));
+  }
+  
+  .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+  
+  .bg-primary-dark {
+    background-color: hsl(var(--primary-dark));
+  }
+  
+  .hover\:bg-primary-dark:hover {
+    background-color: hsl(var(--primary-dark));
+  }
+}
