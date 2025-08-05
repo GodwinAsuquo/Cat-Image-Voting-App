@@ -60,7 +60,7 @@ export const CatCard = ({ cat }: CatCardProps) => {
             <button
               onClick={() => handleVote(1)}
               disabled={hasVoted || isLoading}
-              className={`cursor-pointer p-2 rounded-lg transition-colors ${
+              className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
                 userVote === 1
                   ? 'bg-green-500 text-white'
                   : 'bg-gray-100 dark:bg-gray-700 hover:bg-green-100 dark:hover:bg-green-900'
@@ -72,7 +72,7 @@ export const CatCard = ({ cat }: CatCardProps) => {
             <button
               onClick={() => handleVote(-1)}
               disabled={hasVoted || isLoading}
-              className={`cursor-pointer p-2 rounded-lg transition-colors ${
+              className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-lg transition-colors ${
                 userVote === -1
                   ? 'bg-red-500 text-white'
                   : 'bg-gray-100 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-red-900'
