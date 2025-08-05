@@ -14,6 +14,14 @@ A modern web application for browsing and voting on random cat images using TheC
 - Click any cat to see full details
 - Load new cat images on demand
 
+## Run Scripts
+
+- **npm run dev**: 	Start the development server
+- **npm run build**: Type-check and build the production app
+- **npm run lint**: Run ESLint with TypeScript support
+- **npm run preview**: Preview the production build locally
+
+
 ## Tech Stack
 
 - **Frontend Framework**: React with TypeScript
